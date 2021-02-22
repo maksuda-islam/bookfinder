@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from 'react-bootstrap/dropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const DropDown = (props) => {
     return(

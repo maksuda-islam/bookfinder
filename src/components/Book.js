@@ -30,7 +30,7 @@ const Book = (props) => {
                     )};
                     </div>
                 <div className="card-action">
-                    <Link to={{pathname: "/book/" + props.data, title: props.data.volumeInfo.title , image:props.data.volumeInfo.imageLinks.thumbnail, 
+                    <Link to={{pathname: "/book/" + props.data, title: props.data.volumeInfo.title ,  
                     subtitle: props.data.volumeInfo.subtitle, publisher: props.data.volumeInfo.publisher , publishedDate:props.data.volumeInfo.publishedDate, description:props.data.volumeInfo.description  }}>See Details</Link>
                     
                 </div>

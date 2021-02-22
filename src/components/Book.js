@@ -22,7 +22,13 @@ const Book = (props) => {
 
                     <span className="card-title">{props.data.volumeInfo.title}</span>
                 </div>
-                <div className="card-content">{props.data.volumeInfo.authors[0]}</div>
+                    <div className="card-content">
+                    {props.data.volumeInfo.authors == undefined ? (
+                        <p><h2>"No Author Infos"</h2></p>
+                    ) : (
+                       <p> {props.data.volumeInfo.authors[0]} </p>
+                    )};
+                    </div>
                 <div className="card-action">
                     <Link to={{pathname: "/book/" + props.data, title: props.data.volumeInfo.title , image:props.data.volumeInfo.imageLinks.thumbnail, 
                     subtitle: props.data.volumeInfo.subtitle, publisher: props.data.volumeInfo.publisher , publishedDate:props.data.volumeInfo.publishedDate, description:props.data.volumeInfo.description  }}>See Details</Link>

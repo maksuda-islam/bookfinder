@@ -6,7 +6,7 @@ const NavBar = () => {
     <div>
       <nav class="teal">
           <div>
-          <Link to="/" className="brand-logo" style={{ marginLeft: 555 }}>
+          <Link to="/" className="brand-logo center" >
             Book Finder
           </Link>
         </div>

@@ -2,20 +2,20 @@ import react from "react";
 import { Link } from "react-router-dom";
 import Masonry from 'react-masonry-css';
 const Book = (props) => {
-//     const breakpointColumnsObj = {
-//         default: 4,
-//         1100: 3,
-//         700: 2,
-//         500: 1
-//       };
+    const breakpointColumnsObj = {
+        default: 4,
+        1100: 3,
+        700: 2,
+        500: 1
+      };
     return (
         <Masonry
-        // breakpointCols={breakpointColumnsObj}
-        breakpointCols={3}
+        breakpointCols={breakpointColumnsObj}
+        // breakpointCols={3}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column">
-        <div className="col s12 m3">
-            <div className="card">
+        <div className="my-masonry-grid">
+            <div className="my-masonry-grid_column">
                 <div className="card-image">
                     {props.data.volumeInfo.imageLinks == undefined ? (
                         <img
@@ -31,7 +31,7 @@ const Book = (props) => {
                             />
                         )}
 
-                    <span className="card-header"><h7 className="card-header--title">{props.data.volumeInfo.title}</h7>
+                    <span className="card-header"><h7 className="my-masonry-grid_column">{props.data.volumeInfo.title}</h7>
                     </span>
                 </div>
                     <div className="card-body">

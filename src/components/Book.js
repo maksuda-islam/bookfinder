@@ -2,17 +2,18 @@ import react from "react";
 import { Link } from "react-router-dom";
 import Masonry from 'react-masonry-css';
 const Book = (props) => {
-    // const breakpointColumnsObj = {
-    //     default: 4,
-    //     1100: 3,
-    //     700: 2,
-    //     500: 1
-    //   };
+//     const breakpointColumnsObj = {
+//         default: 4,
+//         1100: 3,
+//         700: 2,
+//         500: 1
+//       };
     return (
-        // <Masonry
+        <Masonry
         // breakpointCols={breakpointColumnsObj}
-        // className="my-masonry-grid"
-        // columnClassName="my-masonry-grid_column">
+        breakpointCols={3}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column">
         <div className="col s12 m3">
             <div className="card">
                 <div className="card-image">
@@ -30,16 +31,17 @@ const Book = (props) => {
                             />
                         )}
 
-                    <span className="card-title">{props.data.volumeInfo.title}</span>
+                    <span className="card-header"><h7 className="card-header--title">{props.data.volumeInfo.title}</h7>
+                    </span>
                 </div>
-                    <div className="card-content">
+                    <div className="card-body">
                     {props.data.volumeInfo.authors == undefined ? (
                         <p><h7>No Author Infos</h7></p>
                     ) : (
                        <p> {props.data.volumeInfo.authors[0]} </p>
                     )}
                     </div>
-                <div className="card-action">
+                <div className="app-card-list" id="app-card-list">
                     <Link to={{pathname: "/book/" + props.data, title: props.data.volumeInfo.title ,  
                     subtitle: props.data.volumeInfo.subtitle, publisher: props.data.volumeInfo.publisher , publishedDate:props.data.volumeInfo.publishedDate, description:props.data.volumeInfo.description  }}>See Details</Link>
                     

@@ -1,8 +1,18 @@
 import react from "react";
 import { Link } from "react-router-dom";
-
+import Masonry from 'react-masonry-css';
 const Book = (props) => {
+    // const breakpointColumnsObj = {
+    //     default: 4,
+    //     1100: 3,
+    //     700: 2,
+    //     500: 1
+    //   };
     return (
+        // <Masonry
+        // breakpointCols={breakpointColumnsObj}
+        // className="my-masonry-grid"
+        // columnClassName="my-masonry-grid_column">
         <div className="col s12 m3">
             <div className="card">
                 <div className="card-image">
@@ -24,10 +34,10 @@ const Book = (props) => {
                 </div>
                     <div className="card-content">
                     {props.data.volumeInfo.authors == undefined ? (
-                        <p><h2>"No Author Infos"</h2></p>
+                        <p><h7>No Author Infos</h7></p>
                     ) : (
                        <p> {props.data.volumeInfo.authors[0]} </p>
-                    )};
+                    )}
                     </div>
                 <div className="card-action">
                     <Link to={{pathname: "/book/" + props.data, title: props.data.volumeInfo.title ,  
@@ -36,6 +46,7 @@ const Book = (props) => {
                 </div>
             </div>
         </div>
+        // </Masonry>
     );
 };
 
